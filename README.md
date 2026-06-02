@@ -1,6 +1,6 @@
 # testing-lab-8-selenium
 
-Автотесты.
+UI-автотесты на Selenium для сайта Saucedemo.
 
 ## Стек
 
@@ -11,20 +11,20 @@
 - Allure
 - Page Object
 - Explicit Wait
-- CSS and XPath locators
+- CSS- и XPath-локаторы
 
-## Кейсы
+## Покрытые тест-кейсы
 
-1. Successful login.
-2. Invalid password error.
-3. Locked-out user error.
-4. Inventory list is displayed after login.
-5. Product sorting by price from low to high.
-6. Add product to cart.
-7. Remove product from cart.
-8. Open checkout from cart.
-9. Checkout required fields error.
-10. Successful checkout.
+1. Успешный вход в систему.
+2. Ошибка при вводе неверного пароля.
+3. Ошибка при входе заблокированного пользователя.
+4. Отображение списка товаров после входа.
+5. Сортировка товаров по цене от меньшей к большей.
+6. Добавление товара в корзину.
+7. Удаление товара из корзины.
+8. Переход к оформлению заказа из корзины.
+9. Ошибка при пустых обязательных полях оформления заказа.
+10. Успешное оформление заказа.
 
 ## Запуск на Windows
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 pytest
 ```
 
-## Запуск на Linux or macOS
+## Запуск на Linux или macOS
 
 ```bash
 python3 -m venv .venv
@@ -44,15 +44,33 @@ pip install -r requirements.txt
 pytest
 ```
 
-## Allure
+## Allure-отчёт
+
+Сначала нужно запустить тесты с генерацией результатов:
 
 ```bash
 pytest --alluredir=allure-results
+```
+
+Затем открыть отчёт:
+
+```bash
 allure serve allure-results
 ```
 
-## Режи браузера
+## Режим браузера
+
+По умолчанию тесты запускаются в headless-режиме, то есть без видимого окна браузера.
+
+Чтобы запустить тесты с обычным окном браузера:
 
 ```bash
 HEADLESS=0 pytest
+```
+
+В PowerShell на Windows можно выполнить так:
+
+```powershell
+$env:HEADLESS="0"
+pytest
 ```
