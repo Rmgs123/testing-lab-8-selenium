@@ -1,8 +1,8 @@
 # testing-lab-8-selenium
 
-Selenium UI autotests for Saucedemo.
+Автотесты.
 
-## Stack
+## Стек
 
 - Python
 - pytest
@@ -13,7 +13,7 @@ Selenium UI autotests for Saucedemo.
 - Explicit Wait
 - CSS and XPath locators
 
-## Test cases
+## Кейсы
 
 1. Successful login.
 2. Invalid password error.
@@ -26,7 +26,7 @@ Selenium UI autotests for Saucedemo.
 9. Checkout required fields error.
 10. Successful checkout.
 
-## Run on Windows
+## Запуск на Windows
 
 ```powershell
 python -m venv .venv
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 pytest
 ```
 
-## Run on Linux or macOS
+## Запуск на Linux or macOS
 
 ```bash
 python3 -m venv .venv
@@ -51,9 +51,7 @@ pytest --alluredir=allure-results
 allure serve allure-results
 ```
 
-## Browser mode
-
-Headless mode is enabled by default.
+## Режи браузера
 
 ```bash
 HEADLESS=0 pytest
