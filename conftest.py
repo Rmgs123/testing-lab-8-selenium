@@ -17,7 +17,9 @@ def browser():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
-    options.binary_location = os.getenv("CHROME_BINARY", "/usr/bin/chromium-browser")
+    browser_path = os.getenv("CHROME_BINARY")
+    if browser_path:
+        options.binary_location = browser_path
     driver_path = os.getenv("CHROMEDRIVER")
     if driver_path:
         driver = webdriver.Chrome(service=Service(driver_path), options=options)
